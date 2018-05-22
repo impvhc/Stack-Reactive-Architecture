@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+ext {
+// App Version
+    def version_major = 0
+    def version_minor = 0
+    def version_patch = 0
+    def version_build = 1
+
+    ext.version_code = version_major * 1000000 + version_minor * 10000 + version_patch * 100 + version_build
+    ext.version_name = "${version_major}.${version_minor}.${version_patch}.${version_build}"
+
+    // App Config
+
+    ext.min_sdk_version = 21
+    ext.compile_sdk_version = 27
+    ext.target_skd_version = 27
+}
+
+android {
+    compileSdkVersion compile_sdk_version
+    defaultConfig {
+        applicationId "com.impvhc.appstack"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_skd_version
+        versionCode version_code
+        versionName version_name
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    //Libraries
+    ext.dagger_version = '2.14.1'
+
+    ext.anko_version = '0.10.2'
+
+    ext.arch_version = '1.1.0'
+    ext.room_version = '1.0.0'
+
+    ext.rxjava_version = '2.1.6'
+    ext.rxandroid_version = '2.0.1'
+    ext.rxkotlin_version = "2.2.0"
+
+    ext.retrofit_version = '2.3.0'
+    ext.okhttp = '3.9.1'
+    ext.gson_version = '2.8.2'
+    ext.joda_version = '2.9.9'
+
+    ext.support_version = '27.0.2'
+}
+
+
+dependencies {
+    api project(path: ':stack')
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //Dagger
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    // Android Lifecycle
+    kapt "android.arch.lifecycle:compiler:$arch_version"
+}
