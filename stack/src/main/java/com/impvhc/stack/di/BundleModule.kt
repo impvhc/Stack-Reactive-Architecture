@@ -2,7 +2,7 @@ package com.impvhc.stack.di
 
 import android.app.Application
 import android.os.Bundle
-import com.impvhc.stack.util.getCurrentActivity
+import com.impvhc.stack.extension.getCurrentActivity
 import dagger.Module
 import dagger.Provides
 

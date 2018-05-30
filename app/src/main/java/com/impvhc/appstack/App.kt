@@ -5,6 +5,10 @@ import com.impvhc.stack.StackApplicationCompat
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
+/**
+ * Just Regular Dagger Configuration
+ * extend [StackApplicationCompat]
+ */
 class App : StackApplicationCompat() {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

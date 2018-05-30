@@ -11,14 +11,14 @@ ext {
     def version_major = 0
     def version_minor = 0
     def version_patch = 0
-    def version_build = 1
+    def version_build = 2
 
     ext.version_code = version_major * 1000000 + version_minor * 10000 + version_patch * 100 + version_build
     ext.version_name = "${version_major}.${version_minor}.${version_patch}.${version_build}"
 
     // App Config
 
-    ext.min_sdk_version = 21
+    ext.min_sdk_version = 19
     ext.compile_sdk_version = 27
     ext.target_skd_version = 27
 }
@@ -51,21 +51,16 @@ ext {
 
     ext.anko_version = '0.10.2'
 
-    ext.arch_version = '1.1.0'
+    ext.arch_version = '1.1.1'
     ext.room_version = '1.0.0'
 
     ext.rxjava_version = '2.1.6'
     ext.rxandroid_version = '2.0.1'
     ext.rxkotlin_version = "2.2.0"
-
-    ext.retrofit_version = '2.3.0'
-    ext.okhttp = '3.9.1'
-    ext.gson_version = '2.8.2'
-    ext.joda_version = '2.9.9'
+    ext.rxrelay_version = "2.0.0"
 
     ext.support_version = '27.0.2'
 }
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -76,12 +71,13 @@ dependencies {
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     //Android Support
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation "com.android.support:appcompat-v7:$support_version"
 
     //Dagger
-     "com.google.dagger:dagger:$dagger_version"
+    api "com.google.dagger:dagger:$dagger_version"
     api "com.google.dagger:dagger-android:$dagger_version"
     api "com.google.dagger:dagger-android-support:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
@@ -96,5 +92,13 @@ dependencies {
     api "android.arch.lifecycle:runtime:$arch_version"
     api "android.arch.lifecycle:extensions:$arch_version"
     api "android.arch.lifecycle:reactivestreams:$arch_version"
+
+    //Rx
+    api "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    api "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    api "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+
+    //RxRelay
+    api "com.jakewharton.rxrelay2:rxrelay:$rxrelay_version"
 }
 

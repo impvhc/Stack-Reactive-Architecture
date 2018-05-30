@@ -45,6 +45,7 @@ captures/
 .idea/modules.xml
 .idea/scopes/scope_settings.xml
 .idea/vcs.xml
+.idea/
 *.iml
 
 # Keystore files
@@ -65,3 +66,4 @@ google-services.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+/.project

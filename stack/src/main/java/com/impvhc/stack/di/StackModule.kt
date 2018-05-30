@@ -1,6 +1,11 @@
 package com.impvhc.stack.di
 
+import android.os.Bundle
 import dagger.Module
 
-@Module(includes = arrayOf(StackViewModelModule::class, BundleModule::class))
+/**
+ * Include [StackViewModelModule] to bind [StackVMFactory]
+ * Include [BundleModule] to bind [Bundle]
+ */
+@Module(includes = [(StackViewModelModule::class), (BundleModule::class)])
 abstract class StackModule

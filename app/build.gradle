@@ -60,6 +60,8 @@ ext {
     ext.joda_version = '2.9.9'
 
     ext.support_version = '27.0.2'
+
+    ext.rxbindings_version = "2.1.1"
 }
 
 
@@ -68,7 +70,7 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -80,4 +82,11 @@ dependencies {
 
     // Android Lifecycle
     kapt "android.arch.lifecycle:compiler:$arch_version"
+
+    // UI Bindings
+    implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxbindings_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:$rxbindings_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:$rxbindings_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-design-kotlin:$rxbindings_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:$rxbindings_version"
 }

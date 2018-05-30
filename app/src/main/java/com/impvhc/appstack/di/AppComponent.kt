@@ -14,7 +14,7 @@ import javax.inject.Singleton
  * Created by victor on 2/13/18.
  */
 @Singleton
-@Component(modules = arrayOf(AndroidSupportInjectionModule::class, AppModule::class, ActivityModule::class))
+@Component(modules = [(AndroidSupportInjectionModule::class), (AppModule::class), (ActivityModule::class)])
 interface AppComponent : AndroidInjector<StackApplicationCompat> {
 
     @Component.Builder
@@ -26,6 +26,4 @@ interface AppComponent : AndroidInjector<StackApplicationCompat> {
     }
 
     fun inject(app: App)
-
-    override fun inject(instance: StackApplicationCompat)
 }

@@ -1,6 +1,6 @@
 package com.impvhc.stack
 
-import com.impvhc.stack.util.lifecycle
+import com.impvhc.stack.extension.lifecycle
 import dagger.android.support.DaggerApplication
 
 /**

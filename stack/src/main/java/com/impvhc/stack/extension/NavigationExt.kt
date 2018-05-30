@@ -1,4 +1,4 @@
-package com.impvhc.stack.util
+package com.impvhc.stack.extension
 
 import android.app.Activity
 import android.content.Intent

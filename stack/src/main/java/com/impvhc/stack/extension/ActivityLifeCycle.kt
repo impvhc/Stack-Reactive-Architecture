@@ -1,4 +1,4 @@
-package com.impvhc.stack.util
+package com.impvhc.stack.extension
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -15,17 +15,17 @@ var currentActivity: Activity? = null
 
 fun Application.lifecycle() = registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks() {
     override fun onActivityCreated(p0: Activity?, p1: Bundle?) {
-        Log.i("LifeCycle", "onActivityCreated/"+p0!!.javaClass.canonicalName)
-        currentActivity = p0!!
+        Log.i("LifeCycle", "onActivityCreated/" + p0!!.javaClass.canonicalName)
+        currentActivity = p0
     }
 
     override fun onActivityResumed(p0: Activity?) {
-        Log.i("LifeCycle", "onActivityResumed/"+p0!!.javaClass.canonicalName)
-        currentActivity = p0!!
+        Log.i("LifeCycle", "onActivityResumed/" + p0!!.javaClass.canonicalName)
+        currentActivity = p0
     }
 
     override fun onActivityPaused(p0: Activity?) {
-        Log.i("LifeCycle", "onActivityPaused/"+p0!!.javaClass.canonicalName)
+        Log.i("LifeCycle", "onActivityPaused/" + p0!!.javaClass.canonicalName)
         currentActivity = null
         super.onActivityDestroyed(p0)
     }
